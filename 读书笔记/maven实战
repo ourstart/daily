@@ -1,0 +1,102 @@
+第一章
+1.maven能够做的事？
+编译、单元测试、生成文档、打包、部署
+
+2.单元测试过程
+满足约定优于配置
+
+
+第二章
+
+maven的升级
+对于linux来说，只需要创建一个软链即可
+ln -s apache-maven-3.1 apache-maven
+升级的过程只需要下载新版本的maven，而后新建软链即可
+ln -s apache-maven-3.2 apache-maven
+
+
+setting.xml下可以配置代理
+
+MAVEN_OPTS可以指定－Xms －Xmx
+
+将setting.xml配置到目录~/.m2/setting.xml的好处是不会影响OS上的其他用户
+
+
+第三章
+测试demo在/Users/ourstart/tmp/helloweb目录下
+手动创建pom.xml文件
+groupId，artifactId，version（坐标）
+groupId定义项目属于哪个组
+arfitactId定义当前项目在组中ID
+version中SNAPSHOT说明该项目还在开发中，是不稳定版本
+name声明项目名称，不是必须
+
+项目主代码放到：src/main/java目录下(maven约定)，Maven会自动搜索该目录找到项目主代码
+
+一般项目中java类包应该基于项目groupId和arfitactId来编写
+
+clean:clean的意思是：clean插件的clean目标
+
+scope为依赖范围
+	test：该依赖只对测试有效
+	compile(默认):该依赖对主代码和测试代码都有效
+	provided：该依赖容器已经提供
+
+一个典型的单元测试包含三个步骤：
+	1.准备测试类及数据
+	2.执行要测试的行为
+	3.检查结果
+约定：所有需要执行测试的方法都以test开头（test＋方法）
+surefire:test(surefire是Maven中负责执行测试的插件)《maven-surefire-plugin》
+
+jar的生成规律是：artifact-version.jar(如果有需要可以使用finalName来自定义该文件的名称)
+
+默认打包生成的jar是不能直接运行的（main方法不会添加到manifest中）需要借助maven-shade-plugin
+pdf有问题，需要到官网查新的配置（https://maven.apache.org/plugins/maven-shade-plugin/examples/resource-transformers.html#ManifestResourceTransformer
+）
+##########################以上步骤是手动创建maven项目的步骤##########################
+
+##########################以下步骤是使用archetype生成项目骨架##########################
+使用 maven-archetype-plugin插件生成
+maven官方插件groupId：org.apache.maven.plugins
+archetype插件的artifactId是：maven-archetype-plugin
+甚至可以自定义archetype来构建自定义项目
+
+
+第四章
+需求功能说明
+
+第五章
+坐标元素：groupId，artifactId，version，packageing，classifier
+maven根据坐标元素到maven repository下载对应的jar包或者pom文件
+
+新的项目也需要坐标的概念，方便其他项目的引用
+5.2章节讲述坐标元素的概念
+groupId做好写：com.公司.项目（com.alibaba.devops）
+artifactId项目名称：建议使用实际的项目（helloweb-parent），好处是能够在target下找到项目
+packaging打包方式：jar，war，pom（打包方式会影响构建的生命周期）；不写默认jar
+classifier：能够附属输出文档和源代码（javadoc，sources）
+（groupId,artifactId,version是必须的，packaging可选，classifier是不能直接定义的）
+
+编译classpath，测试classpath，运行classpath
+
+
+##########################
+##########################
+##########################
+##########################
+Maven命令
+mvn help:system(打印所有java系统属性，环境变量)
+mvn clean compile(clean告诉maven清理输出目录target，compile告诉maven编译项目主代码)
+mvn clean test （执行单元测试，其中执行的任务比较多）
+mvn clean package(打包)
+mvn clean install(将生成的jar和pom拷贝到本地repository)
+（     执行test时，执行了compile；
+	执行package时，
+	执行了test；
+	执行install时，
+	执行了package）
+
+
+mvn archetype:generate(根据项目的特点创建基础环境目录和pom.xml文件)
+mvn help:effective-pom(查看有效pom文件)

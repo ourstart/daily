@@ -1,0 +1,35 @@
+//create local git
+mkdir  test
+cd test
+
+//init local git structure
+git init
+
+//attach remote git
+git remote add origin <git url>
+
+//add local all file to local git
+git add .
+
+//commit git file
+git commit -m ‘comment’
+
+//pull git from remote
+git pull <git url>
+
+//sync to remote git
+git push -u origin master(git push origin master)
+
+//delete remote origin
+sudo git remote rm origin
+
+
+git branch feature/20160629_201606291153_727206
+git checkout feature/20160629_201606291153_727206
+git push origin feature/20160629_201606291153_727206:feature/20160629_201606291153_727206
+git push origin :feature/20160629_201606291153_727206删除远程分支
+
+
+
+Git原理图
+http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
