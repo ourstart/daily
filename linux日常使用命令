@@ -1,1 +1,41 @@
-aa
+//查看出口ip命令
+wget http://members.3322.org/dyndns/getip;cat getip
+
+//查看已经删除但是未释放空间的命令
+lsof | grep delete
+
+//获取url的response的head信息
+curl -i  url
+
+//查目录下某个关键字
+grep -R key *
+
+//输出奇偶行
+sed -n 'n;p' file偶
+sed -n 'p;n' file奇
+
+//保留字符串中字符或者数字
+tr -cd '[a-z]' 保留字符
+tr -cd '[0-9]' 保留数字
+
+//查看内存大小
+cat /proc/meminfo  | grep MemTotal | awk -F':' '{print $2}' | awk -F'kB' '{print $1}'
+
+//查看cpu core数
+cat /proc/cpuinfo| grep "processor"| wc -l
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+
+//统计某个时间段的日志信息
+cat log.log  | grep -i JVM_LOG_GC | egrep  '(0[0-7]:[0-9][0-9]:[0-9][0-9])'
+
+//清空正在写的日志
+sudo bash -c ">tomcat_stdout.log"
+
+//统计行数
+cat file | sort | uniq -c | sort -nr
+
+//清理内存命令
+sudo bash -c "echo 3 > /proc/sys/vm/drop_caches"
+
+//查看系统状态
+dstat -tcdlnmp
