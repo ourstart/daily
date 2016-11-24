@@ -1,0 +1,49 @@
+# 参数相关
+
+idea 启动解决perm区满jvm参数
+-XX:PermSize=512M -XX:MaxNewSize=512m -XX:MaxPermSize=512m
+
+
+# 内存溢出相关
+google perftools
+google perftools安装使用
+
+libunwind*
+wget http://download.savannah.gnu.org/releases/libunwind/libunwind-0.99-beta.tar.gz
+tar -zxvf  libunwind*.tar.gz
+cd libun*
+sudo ./configure
+sudo make
+sudo make install
+sudo make clean
+
+googleperftools*
+wget http://google-perftools.googlecode.com/files/google-perftools-1.7.tar.gz
+tar -zxvf google*
+cd google*
+sudo ./configure --prefix=/usr/local --enable-frame-pointers
+sudo make
+sudo make install
+sudo make clean
+
+sudo su admin
+
+sudo -u admin mkdir -p /home/admin/perftools/test
+
+增加/usr/local/bin目录
+sudo vi /etc/ld.so.conf.d/usr_local_lib.conf
+sudo /sbin/ldconfig生效libunwind
+
+应用程序启动前
+export LD_PRELOAD=/usr/local/lib/libtcmalloc.so
+export HEAPPROFILE=/home/admin/perftools/test(目录一定要存在)
+
+
+重新启动应用程序，并使用如下分析heap文件
+/usr/local/bin/pprof --text /opt/taobao/java/bin/java
+
+
+使用btrace分析原因
+sudo su admin
+export JAVA_HOME=/opt/taobao/java
+./bin/btrace -cp build/ `pgrep -u admin java` samples/Memory.java

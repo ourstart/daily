@@ -1,2 +1,0 @@
-idea 启动解决perm区满jvm参数
--XX:PermSize=512M -XX:MaxNewSize=512m -XX:MaxPermSize=512m
