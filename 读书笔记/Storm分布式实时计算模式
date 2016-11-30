@@ -2,3 +2,11 @@
 tuple
 spout
 bolt
+
+并发：
+
+
+
+架构：
+主节点：numbus
+从节点：supervisor
