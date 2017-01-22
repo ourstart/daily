@@ -1,13 +1,17 @@
 # idea快捷键
 
 ********使用过************
-********未使用过*************
 ctrl+enter 出现生成get,set方法的界面 || command+N 查找类
+command+D复制一行
+command + delete删除行
+command+alt+T 把选中的代码放在 TRY{} IF{} ELSE{} 里
+command+alt+L 格式化代码
+
+
+********未使用过*************
 shift+enter 换到下一行
 command+R 替换
 ctrl+shift+R 可以在整个工程或着某个目录下面替换变量
-command+D复制一行
-command + delete删除行
 command+J 可以生成一些自动代码，比如for循环
 command+B 找变量的来源  同F4   查找变量来源
 command+alt+B 可以导航到一个抽象方法的实现代码
@@ -16,8 +20,6 @@ command+F 在当前文件里查找文本
 ctrl+shift+F  可以在整个工程或着某个目录下面查找变量
 command+E最近打开的文件
 alt+enter 导入包，自动修改
-command+alt+L 格式化代码
-command+alt+T 把选中的代码放在 TRY{} IF{} ELSE{} 里
 command+P 方法参数提示
 command+/ 注释一行或着多行 //
 ctrl+shift+/ 注释/*...*/
