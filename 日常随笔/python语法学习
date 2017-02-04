@@ -1,0 +1,37 @@
+python解释器
+
+python使用4个空白符号进行代码组织，冒号表示一段缩进代码块的开始
+
+万物皆对象
+
+#号表示注释
+
+变量和按引用传递（入参可能被函数内部该表，变量赋值相当于同时指向同一个内存地址，任何一方改变，另一方都会有所展示）
+  要判断两个引用是否指向同一个对象，可以使用is关键字
+  要判断两个引用是否不是指向同一个对象，可以使用is not关键字
+  list(a):list函数始终会创建新列表
+
+引入模块：就是一个含有函数、变量定义以及从其他.py文件引入的此类东西的.py文件
+  eg:
+      1.import some_module
+      2.from some_module import f,g,PI
+      3.from some_module import f as fun, PI ad pi
+
+运算符和比较运算符
+  is和is not常常常常用于判断是否为none，因为none的实例只有一个
+    a = None; a is None;
+
+可变和不可变对象
+  大部分python对象都是可变的（mutable）：列表、字典、NumPy数组以及大部分用户自定义类型（类）
+  有些python对象是不可变的（immutable）：字符串、元组（  元组是使用小括号表示，eg：a_tuple=(3,5,(4,5))  ）
+
+标量类型
+  None：python中“null”值
+  str：字符串类型
+  unicode：Unicode字符串类型
+  float：双精度浮点数
+  bool：True或False
+  int：有符号整数
+  long：任意精度的有符号整数
+
+  字符串：
