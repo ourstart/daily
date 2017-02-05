@@ -16,3 +16,7 @@ else:
 
 dt = datetime(2017, 02, 04, 16, 35, 00)
 print dt.date()
+
+
+for i in range(100):
+    print i
