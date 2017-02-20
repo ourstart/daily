@@ -1,0 +1,5 @@
+维度叫axes，秩叫rank
+
+numpy提供数据类型：
+  ndarray: n-dimension array N维数组
+  ufunc: 对n维数据的操作
