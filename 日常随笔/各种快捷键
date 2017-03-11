@@ -6,7 +6,9 @@ command+D复制一行
 command + delete删除行
 command+alt+T 把选中的代码放在 TRY{} IF{} ELSE{} 里
 command+alt+L 格式化代码
-
+command+alt+B 查找接口实现类
+command+alt+left/right 返回上次浏览的位置
+command+alt+v 返回变量自动补全
 
 ********未使用过*************
 shift+enter 换到下一行
@@ -25,6 +27,8 @@ command+/ 注释一行或着多行 //
 ctrl+shift+/ 注释/*...*/
 ctrl+shift+f10正常运行java类
 ctrl+shift+f9 debug运行java类
+
+
 
 # mac快捷键
 下一个Tab: Control + Tab

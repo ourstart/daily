@@ -20,3 +20,5 @@ print dt.date()
 
 for i in range(100):
     print i
+
+innerList = [1.0, ]

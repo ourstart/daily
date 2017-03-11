@@ -4,6 +4,14 @@ java基础
 	掌握arraylist、linkedlist、vector、stack、priorityqueue、hashset、linkedhashset、treeset、hashmap、linkedhashmap、treemap、weakhashmap、enummap、treemap、hashtable的特点和实现原理
 	掌握CopyOnWriteArrayList、CopyOnWriteArraySet、ConCurrenyHashMap的实现原理和适用场景
 
+	Map学习：
+			hashmap:无顺
+			hashtable:
+			linkedhashmap:根据输入顺序输出
+			treemap:默认根据key排序输出
+			weakhashmap:
+			enummap:
+
 2.IO
 	掌握InputStream,OutputStream,Reader,Writer的继承体系
 	掌握字节流（FileInputStream,DataInputStream,BufferedInputStream,FileOutputStrea,DataOutputStream,BufferedOutputStream）和字符流（BufferedReader、InputStreamReader、FileReader、BufferedWriter、OutputStreamWriter、PrintWriter、FileWriter），并熟练运用
@@ -17,6 +25,7 @@ java基础
 4多线程
 	掌握Executors可以创建的三种（JAVA8增加了一种，共四种）线程池的特点及使用范围
 	掌握多线程同步机制，并熟练运用
+	ThreadLocal<T>:为每一个线程维护变量的副本
 
 5socket
 	掌握socket通信原理
