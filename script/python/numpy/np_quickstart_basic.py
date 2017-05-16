@@ -1,5 +1,7 @@
 import numpy as np
 from numpy import pi
+
+print "******** a np.arange().reshape(3,5), ndarray.shape, ndarray.ndim, ndarray.dtype.name, ndarray.itemsize, ndarray.size"
 a = np.arange(15).reshape(3,5)
 print a
 print a.shape
@@ -9,7 +11,7 @@ print a.itemsize
 print a.size
 print type(a)
 
-print "********"
+print "******** np.array()"
 
 t1 = (1,2,3)
 t2 = (4,5,6)
@@ -26,7 +28,7 @@ print b.itemsize
 print b.size
 print type(b)
 
-print "********"
+print "********  np.array([ [1,2], [3,4] ], dtype=complex)"
 
 # e = np.array( [ [1,2], [3,4] ], dtype=complex )
 
@@ -34,34 +36,34 @@ e = np.array( [ [1,2], [3,4] ], dtype=complex )
 
 print e
 
-print "******f"
+print "******f np.zeros((3,4))"
 f = np.zeros( (3,4) )
 print f
 
-print "******g"
+print "******g np.ones((2,3,4), dtype=np.int16 )"
 g = np.ones( (2,3,4), dtype=np.int16 )
 print g
 print g.shape
 print g.ndim
 
-print "******h"
+print "******h np.empty((2,3))"
 h = np.empty( (2,3) )
 print h
 
-print "*******i"
+print "*******i np.arange()"
 i = np.arange( 10, 30, 5 )
 print i
 
-print "*******j"
+print "*******j np.arange()"
 j = np.arange( 0, 2, 0.3 )
 print j
 
-print "*******k"
+print "*******k np.linspace()"
 k = np.linspace( 0, 1.8, 7 )
 print k
 
 
-print "*******l"
+print "*******l np.linspace()"
 l = np.linspace( 0, 2*pi, 100 )
 # print l
 print 10 * np.sin(l)
@@ -70,15 +72,15 @@ print "*******a1"
 a1 = np.arange(6)
 print a1
 
-print "*******a2"
+print "*******a2  np.arange().reshape()"
 a2 = np.arange(12).reshape(4,3)
 print a2
 
-print "*******a3"
+print "*******a3 np.arange().reshape()"
 a3 = np.arange(24).reshape(2,3,4)
 print a3
 
-print "*******a4"
+print "*******a4 "
 a4 = np.arange(10000)
 print a4
 
@@ -86,7 +88,7 @@ print "*******a5"
 a5 = np.arange(10000).reshape(100,100)
 print a5
 
-print "*******a6 a7 a8"
+print "*******a6 a7 a8  np.array(), np.arange(), np.sin()"
 a6 = np.array( [20,30,40,50] )
 a7 = np.arange( 4 )
 a8 = a6 - a7
@@ -95,14 +97,14 @@ print a7**2
 print 10 * np.sin(a6)
 print a6 < 35
 
-print "*******a9 a10 a11"
+print "*******a9 a10 a11 np.array(), A*B, A.dot(B), np.dot(A, B)"
 a9 = np.array( [[1,1],[0,1]] )
 a10 = np.array( [[2,0],[3,4]] )
 print a9 * a10
 print a9.dot(a10)
 print np.dot(a9, a10)
 
-print "*******a12 a13"
+print "*******a12 a13 np.ones((2, 3), dtype=int), np.random.random(2, 3)"
 a12 = np.ones((2,3), dtype=int)
 a13 = np.random.random((2,3))
 print 5*np.random.random_sample((3, 2)) - 5
@@ -113,7 +115,7 @@ print a13
 a13 += a12
 print a13
 
-print "*******a14 a15 a16 a17"
+print "*******a14 a15 a16 a17 "
 a14 = np.ones(3, dtype=np.int32)
 a15 = np.linspace(0,pi,3)
 print a14,a15
@@ -126,11 +128,11 @@ a17 = np.exp(a16*1j)
 print a17,a17.dtype.name
 
 
-print "*******a18 "
+print "*******a18 np.random.random((2, 3)), A.sum(), A.max(), A.min(), np.sum(),np.min()"
 a18 = np.random.random((2,3))
 print a18,a18.sum(),a18.max(),a18.min()
 
-print "*******a19 "
+print "*******a19 np.arange(12).reshape(3,4), A.sum(axis=0), A.max(axis=1)"
 a19 = np.arange(12).reshape(3,4)
 print a19,a19.sum(axis=0),a19.min(axis=1), a19.max(axis=1)
 print a19.cumsum(axis=0)
